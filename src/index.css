@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   font-family: "Noto Sans Bengali", "Nirmala UI", system-ui, sans-serif;
@@ -45,3 +46,68 @@ body > .skiptranslate,
 iframe.goog-te-banner-frame,
 .goog-te-banner-frame.skiptranslate { display: none !important; }
 body { top: 0 !important; }
+
+:root { color-scheme: light; }
+:root.dark { color-scheme: dark; color: #e7ede8; background: #151c18; }
+
+#root { position: relative; isolation: isolate; }
+#root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 0% 15%, rgb(139 190 108 / 20%), transparent 55%),
+    radial-gradient(ellipse at 100% 45%, rgb(104 186 160 / 15%), transparent 50%),
+    radial-gradient(ellipse at 45% 100%, rgb(213 190 112 / 12%), transparent 50%);
+}
+.dark #root::before {
+  background:
+    radial-gradient(ellipse at 0% 15%, rgb(75 157 88 / 18%), transparent 55%),
+    radial-gradient(ellipse at 100% 45%, rgb(45 153 137 / 14%), transparent 50%),
+    radial-gradient(ellipse at 45% 100%, rgb(150 162 65 / 8%), transparent 50%);
+}
+.dark #google_translate_element select {
+  background: #202b24;
+  color: #e7ede8;
+  border-color: #536257;
+}
+button:focus-visible { outline: 2px solid #82a76f; outline-offset: 4px; }
+
+.theme-switch {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 76px;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #c9d2c8;
+  border-radius: 999px;
+  background: #e5ebe2;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.theme-switch-thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px #0002;
+  transition: transform 180ms ease;
+}
+.theme-switch svg { position: relative; width: 18px; height: 18px; pointer-events: none; }
+.theme-switch-sun { color: #805914; }
+.theme-switch-moon { color: #627065; }
+.theme-switch[aria-checked="true"] { background: #273c30; border-color: #607967; }
+.theme-switch[aria-checked="true"] .theme-switch-thumb { transform: translateX(32px); background: #d9eddf; }
+.theme-switch[aria-checked="true"] .theme-switch-sun { color: #a9b7ad; }
+.theme-switch[aria-checked="true"] .theme-switch-moon { color: #203b2a; }
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch-thumb { transition: none; }
+}

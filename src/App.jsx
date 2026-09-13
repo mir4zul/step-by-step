@@ -20,7 +20,7 @@ export default function App() {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:block focus:p-4">মূল লেখায় যান</a>
       <Header path={path} />
       <Page />
-      <footer className="border-t border-stone-200 px-6 py-8 text-center text-sm text-stone-500">পড়ার অবসর · নিজের ছন্দে, নিজের সময় নিয়ে।</footer>
+      <footer className="border-t border-stone-200 dark:border-stone-700 px-6 py-8 text-center text-sm text-stone-500 dark:text-stone-400">পড়ার অবসর · নিজের ছন্দে, নিজের সময় নিয়ে।</footer>
     </div>
   )
 }

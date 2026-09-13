@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="পড়ার অবসর — দীর্ঘ লেখা পড়ার একটি সহজ জায়গা।" />
+    <script>
+      (() => {
+        let theme;
+        try { theme = localStorage.getItem('reading-theme'); } catch {}
+        const dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', dark);
+      })();
+    </script>
     <title>পড়ার অবসর</title>
   </head>
   <body>
