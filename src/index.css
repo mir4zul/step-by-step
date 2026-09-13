@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Noto Sans Bengali", "Nirmala UI", system-ui, sans-serif;
+  color: #24382e;
+  background: #f8f7f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+::selection { background: #dcebb6; color: #203329; }
+a:focus-visible { outline: 2px solid #527a40; outline-offset: 5px; }
+#google_translate_element select {
+  max-width: 100%;
+  border: 1px solid #d6d3d1;
+  border-radius: 0.5rem;
+  background: white;
+  color: #24382e;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  font-size: 0.875rem;
+}
+#google_translate_element .goog-te-gadget {
+  font-size: 0;
+  white-space: nowrap;
+}
+#google_translate_element .goog-te-gadget span,
+#google_translate_element .goog-te-gadget img {
+  display: none;
+}
+#google_translate_element .goog-te-gadget select {
+  font-size: 0.875rem;
+}
+#google_translate_element select:focus-visible {
+  outline: 2px solid #527a40;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html.translation-changing body {
+  opacity: 0.86;
+  transition: opacity 180ms ease;
+}
+body { min-width: 320px; }
+body > .skiptranslate,
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0 !important; }
